@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url("https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1944418958,1529882042&fm=173&s=E8B82ED55E21C8CE5233286E0300E07A&w=400&h=266&img.JPEG");
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            /* background-color:red; */
+            position: absolute;
+            left: 580px;
+            top: 200px; 
+            border-radius: 50%;
+            box-shadow: 0 0 0 10000px #000,0 0 10px 30px #000 inset;
+            cursor: move;
+            transition: width 1s,height 1s, margin 1s;
+        }
+        #box:active{
+            width: 600px;
+            height: 600px;
+            margin: -170px 0  0 -170px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        window.onmousemove = function(e){
+            var e = e || window.event;
+            var x = e.pageX,
+                y = e.pageY;
+            box.style.left = x-150 +"px";
+            box.style.top = y-150 + "px";        
+        }
+    </script>
+</body>
+</html>
